@@ -14,7 +14,7 @@
       = locale
       = f.globalize_fields_for locale do |g|
         = g.input :title
-        = g.input :text, :as => :ckeditor, :input_html => { :ckeditor => {:width=>'100%',:height => 200,:toolbar => 'Full'} }
+        = g.input :text
 
 
   = f.submit 'Save', :class=>'btn btn-primary'
