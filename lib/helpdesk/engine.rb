@@ -1,7 +1,7 @@
 require 'rails'
 require 'simple_form'
 require 'state_machine'
-require 'bootstrap-sass'
+require 'twitter-bootstrap-rails'
 require 'rails_autolink'
 require 'simple_form'
 require 'globalize'

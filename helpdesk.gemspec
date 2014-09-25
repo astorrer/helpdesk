@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "chosen-rails"
   s.add_dependency "rails_autolink"
-  s.add_dependency "bootstrap-sass",'~> 3.1.0'
+  s.add_dependency "twitter-bootstrap-rails"
   s.add_dependency "rails", ">= 4.0.0"
   s.add_dependency 'sass-rails', '>= 3.2.3'
   s.add_dependency 'simple_form'
