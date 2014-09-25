@@ -1,27 +1,45 @@
-%nav.navbar.navbar-inverse{:role => "navigation"}
-  .container
+.bs-component
+  .navbar.navbar-default
     .navbar-header
-      %button.navbar-toggle{"data-target" => "#navbar-brand-centered", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
+      %button.navbar-toggle{"data-target" => ".navbar-responsive-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       =link_to Helpdesk.site_address, main_app.root_path, :class=>'navbar-brand', :title => t('helpdesk.name')
-    #navbar-brand-centered.collapse.navbar-collapse
+    .navbar-collapse.collapse.navbar-responsive-collapse
       %ul.nav.navbar-nav
         = menu_li t('helpdesk.tickets.title'),admin_tickets_path
         = menu_li t('helpdesk.ticket_types.title'),admin_ticket_types_path
         = menu_li t('helpdesk.subscribers.title'),admin_subscribers_path
         = menu_li t('helpdesk.faqs.title'),admin_faqs_path
-      %ul.nav.navbar-nav.navbar-right
-        %li.dropdown.user
+        %li.dropdown
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            = link_to current_user.send(Helpdesk.display_user.to_sym), "#",:class=>"dropdown-toggle",data:{toggle:"dropdown"}
+            Dropdown
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} Action
+            %li
+              %a{:href => "#"} Another action
+            %li
+              %a{:href => "#"} Something else here
+            %li.divider
+            %li.dropdown-header Dropdown header
+            %li
+              %a{:href => "#"} Separated link
+            %li
+              %a{:href => "#"} One more separated link
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to current_user.send(Helpdesk.display_user.to_sym), "#",:class=>"dropdown-toggle",data:{toggle:"dropdown"}
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Dropdown
             %b.caret
           %ul.dropdown-menu
             %li.dropdown-header= link_to t('helpdesk.lang'),"#",:class=>"dropdown-toggle",data:{toggle:"dropdown"}
             %li= link_to "English", params.merge({:locale => :en})
             %li= link_to "Polski", params.merge({:locale => :pl})
             %li.divider
-            %li=link_to 'Home',main_app.root_path
+            %li=link_to 'MowerMan',main_app.root_path
             %li=link_to t('users.sign_out'),main_app.destroy_user_session_path, :method => :delete, :class => 'icon exit blue'
