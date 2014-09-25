@@ -2,13 +2,13 @@ class Helpdesk::Admin::TicketsController < Helpdesk::Admin::BaseController
 
   def index
     if params[:tickets] == 'unassigned'
-      @tickets = Helpdesk::Ticket.unassigned.scoped
+      @tickets = Helpdesk::Ticket.unassigned
     elsif params[:tickets] == 'closed'
-      @tickets = Helpdesk::Ticket.closed.scoped
+      @tickets = Helpdesk::Ticket.closed
     elsif params[:tickets] == 'active'
-      @tickets = Helpdesk::Ticket.active.scoped
+      @tickets = Helpdesk::Ticket.active
     elsif params[:tickets] == 'all'
-      @tickets = Helpdesk::Ticket.scoped
+      @tickets = Helpdesk::Ticket.all
     else
       @tickets = my_tickets.active
     end
