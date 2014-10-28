@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile"]
   s.require_paths = ['lib']
-  spec.required_ruby_version = '>= 1.8.6'
 
   s.add_development_dependency "launchy"
   s.add_development_dependency 'rspec-rails'
