@@ -4,7 +4,7 @@
     #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
       - @faqs.each do |faq|
         .panel.panel-default
-          .panel-heading{:role => "tab" :id => faq.id }
+          .panel-heading{:role => "tab", :id => faq.id }
             %h4.panel-title
               %a{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
                 = link_to faq.title, "\#link#{faq.id}"
