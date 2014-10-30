@@ -6,8 +6,8 @@
         .panel.panel-default
           .panel-heading{:role => "tab" :id => faq.id }
             %h4.panel-title
-                %a{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
-                  = link_to faq.title, "\#link#{faq.id}"
+              %a{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
+                = link_to faq.title, "\#link#{faq.id}"
           .panel-collapse.collapse.in{"aria-labelledby" => "headingOne", :role => "tabpanel", :id => faq.id }
             .panel-body
               = raw faq.text
